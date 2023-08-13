@@ -1,4 +1,4 @@
-This is a clone of a Temperature Converter , created with HTML & CSS and Javascript. 
+This is a clone of a Temperature Converter , created with HTML,CSS & Javascript. 
 <script></script> tag is attached in the HTML file inside the <body></body> tag.
 
 Coverters used are:-
