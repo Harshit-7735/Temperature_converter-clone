@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ <nav class="heading">
+       <h1>Temperature Converter</h1>
+</nav>
+    <div id=container>
+        <div class="input-div">
+            <label class="deg-name" for="Cel">Celsius °C </label><br>
+            <input type="number" id="Cel" name="Celsius" value="0" class="temp">
+        </div>
+        <div class="input-div"> 
+            <label class="deg-name" for="Fah">Fahrenheit °F</label><br>
+            <input type="number" id="Fah" name="fahrenheit" value="32" class="temp">
+        </div>
+        <div class="input-div"> 
+            <label class="deg-name" for="Kel">Kelvin K</label><br>
+            <input type="number" id="Kel" name="Kelvin" value="273.150" class="temp">
+        </div>
+    </div>
+<script>
+    var cel = document.getElementById("Cel");
+        var fah = document.getElementById("Fah");
+        var kel = document.getElementById("Kel");
+        cel.addEventListener('input',function(){
+            let c = this.value;
+            let f = (c * 9/5 ) + 32;
+            let k = parseFloat(c) + 273.15;
+            if(!Number.isInteger(f)){
+                f = f.toFixed(3);
+            }
+            if(!Number.isInteger(k)){
+                k = k.toFixed(3);
+            }
+            Fah.value = f;
+            Kel.value = k;
+        });
+
+        fah.addEventListener('input',function(){
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+            let k = (f - 32) * 5/9 + 273.15;
+            if(!Number.isInteger(c)){
+                c = c.toFixed(3);
+            }
+            if(!Number.isInteger(k)){
+                k = k.toFixed(3);
+            }
+            Cel.value = c;
+            kel.value = k;
+        });
+
+        kel.addEventListener('input',function(){
+            let k = this.value;
+            let c = k - 273.15;
+            let f = (c * 9/5 ) + 32;
+            if(!Number.isInteger(c)){
+                c = c.toFixed(3);
+            }
+            if(!Number.isInteger(f)){
+                f = f.toFixed(3);
+            }
+            Cel.value = c;
+            Fah.value = f;
+        });
+        
+</script>
+</body>
+</html>
